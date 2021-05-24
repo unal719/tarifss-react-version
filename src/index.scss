@@ -1,0 +1,225 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html {
+  height: 100%;
+}
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+body {
+  width: 100%;
+  background-color: #d4d4d4;
+  font-family: "Open-Sans", sans-serif;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-main-content {
+  max-width: 1180px;
+  margin: 64px auto;
+  width: 100%;
+  // min-height: 728px;
+}
+
+#tariff-list-container {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  //   .tariffs-box-container {
+  .tariff-box {
+    border: 2px solid #f4f4f4;
+    border-radius: 4px;
+    // height: 128px;
+    color: #333;
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    .left-id-column {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+      border-right: 2px solid #ccc;
+      font-size: 14px;
+    }
+
+    .tariff-name {
+      padding: 24px 16px 0 16px;
+      font-size: 16px;
+      flex: 1;
+    }
+
+    .tariff-content-column {
+      display: flex;
+      padding: 24px 16px 0 16px;
+      flex-direction: column;
+      flex: 1;
+      .row-content {
+        display: flex;
+        flex-direction: column;
+        .content-text {
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+        .content-value-row {
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+          .logo {
+            height: 24px;
+            width: 36px;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .download {
+              width: 12px;
+              height: 12px;
+              background: url("./assets/iconmonstr-arrow-down-thin.svg") center
+                center/cover no-repeat;
+            }
+            .upload {
+              width: 12px;
+              height: 12px;
+              background: url("./assets/iconmonstr-arrow-down-thin.svg") center
+                center/cover no-repeat;
+            }
+          }
+          .value-badge {
+            height: 24px;
+            /* padding: 0 24px; */
+            border: 1px solid #ccc;
+            border-radius: 0 16px 16px 0;
+            display: flex;
+            align-items: center;
+            min-width: 60%;
+            justify-content: center;
+            &::after {
+              content: "Mbit/s";
+              margin-left: 4px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    .tariff-benefits {
+      padding: 24px 16px 0 16px;
+      font-size: 14px;
+      flex: 1;
+      .tariff-benefit-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid #d4d4d4;
+        margin-bottom: 4px;
+      }
+    }
+
+    .price-column {
+      padding: 24px 16px 0 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      .tariff-price {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        &::after {
+          content: "€";
+          margin-left: 4px;
+        }
+      }
+
+      .link-button {
+        width: 100%;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        cursor: pointer;
+        .link-button-text {
+          font-size: 14px;
+        }
+        .link-button-icon {
+          width: 16px;
+          height: 16px;
+          // background: url("../../../assets/logo/iconmonstr-arrow-63.svg") center
+          //   center/cover no-repeat;
+        }
+      }
+    }
+  }
+  //   }
+}
+
+#list-sort-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+  .title {
+    font-size: 18px;
+    margin-right: 8px;
+  }
+  .sort-items {
+    display: flex;
+    align-items: center;
+    .sort-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px;
+      background-color: #ccc;
+      margin-right: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      min-width: 120px;
+      &.selected {
+        background-color: #ffbc00;
+      }
+      .sort-text {
+        font-size: 14px;
+        color: #ffffff;
+        text-align: center;
+      }
+      .logo {
+        height: 12px;
+        width: 12px;
+        margin-left: 8px;
+        display: none;
+        &.desc {
+          display: initial;
+          background: url("./assets/iconmonstr-arrow-down-thin.svg") center
+            center/cover no-repeat;
+        }
+
+        &.asc {
+          display: initial;
+          background: url("./assets/iconmonstr-arrow-up-thin.svg") center
+            center/cover no-repeat;
+        }
+      }
+    }
+  }
+}
